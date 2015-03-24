@@ -1,7 +1,20 @@
 #!/usr/bin/tclsh
 #will have to change the above line for different locations
 #
+#execute: ./accessed.tcl <filename> <filename> <filename>
+#
 #AUTHOR BHARGAVA NARAYANA
+#
+#Advantages of this implementation over the C program:
+#lesser code
+#advantags of scripting languge
+#library functions used(code reused)
+#case senstive bug not seen here
+#number of file compared can be changed using NUM_OF_FILES flag
+#
+#Disadvantages:
+#TCL has to be installed to run
+#disadvantages of scripting language
 #
 #change this value to change number of files.
 set NUM_OF_FILES 3
