@@ -1,0 +1,34 @@
+###networking cmds
+
+wireshark equivalent
+tcpdump
+tshark
+
+NIC being used
+ip a|grep "state UP"
+
+display NIC MAC 
+ip link show <NIC>
+
+neighbouring NICs
+ip neigh show
+
+routing table
+ip route show
+ 
+DNS info 
+host -a <address>
+
+###linux locations
+
+1st boot file
+/arch/x86/boot/compressed/head_64.S
+
+n/w config scripts
+/etc/sysconfig/network-scripts
+
+restart NIC config
+/etc/init.d/network restart
+
+
+
