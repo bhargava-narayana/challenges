@@ -29,6 +29,24 @@ bool is_palindrome(int value)
                 return false;
 }
 
+bool is_palindrome_using_loop(int value)
+{
+        int reverse;
+        int temp;
+        int reminder;
+        
+        for(temp = value; value != 0; value = value / 10)
+        {
+                reminder = value % 10;
+                reverse = reverse * 10 + reminder;
+        }
+        
+        if(reverse == temp)
+                return true;
+        else
+                return false;
+}
+
 int main(int argc, char *argv[])
 {
         if(argc != 2)
@@ -37,7 +55,18 @@ int main(int argc, char *argv[])
                 return EXIT_FAILURE;
         }
 
+        printf("\n\nusing is_palindrome \n");
         if(is_palindrome(atoi(argv[1])))
+        {
+                fprintf(stdout, "%s is a palindrome\n", argv[1]);
+        }
+        else
+        {
+                fprintf(stdout, "%s is not a palindrome\n", argv[1]);
+        }
+
+        printf("\n\nusing is_palindrome_using_loop \n");
+        if(is_palindrome_using_loop(atoi(argv[1])))
         {
                 fprintf(stdout, "%s is a palindrome\n", argv[1]);
         }
