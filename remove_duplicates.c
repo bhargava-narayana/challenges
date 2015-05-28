@@ -8,6 +8,25 @@
  * Function removes duplicate characters from the string
  * This function work in-place and fills null characters
  * in the extra space left
+ *
+ *1. Initialize:
+ *     str :              input string 
+ *     input_index:       index to  keep track of location of next
+ *                        character in input string 
+ *     result_index:      index to  keep track of location of
+ *                        next character in the resultant string 
+ *     bin_hash[0..255]:  Binary hash to see if character is 
+ *                        already processed or not 
+ *2: Do following for each character *(str + input_index) in input string:
+ *      (a) if bin_hash is not set for *(str + input_index) then
+ *          if program sees the character *(str + input_index) first time
+ *          (i)  Set bin_hash for *(str + input_index)
+ *          (ii) Move *(str  + input_index) to the resultant string.
+ *                 This is done in-place.
+ *          (iii) result_index++
+ *      (b) input_index++
+ *3: Remove extra characters at the end of the resultant string.
+ *
  */ 
 char *removeDups(char *str)
 {
@@ -34,6 +53,7 @@ char *removeDups(char *str)
 
         return str;
 }
+
 int main(int argc, char *argv[])
 {
         if(argc != 2)
