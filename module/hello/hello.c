@@ -25,12 +25,12 @@
 //init LKM
 int init_module()
 {
-        printk("Hello World!!\n");
+        printk(KERN_EMERG "Hello World!!\n");
 
         return 0;
 }
 
 void cleanup_module()
 {
-        printk("This is the short life of a LKM\n");
+        printk(KERN_EMERG "This is the short life of a LKM\n");
 }
