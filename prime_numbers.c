@@ -40,6 +40,12 @@ void markMultiples(bool arr[], int a, int n)
 
 }
 
+/*
+ * Most efficient
+ * Assume all numbers are prime
+ * Take the first prime number and removes all of its multiples;
+ * repeat
+ */
 void sieveOfEratosthenes(int n)
 {
         //no prime numbers less then 2
@@ -69,6 +75,10 @@ void sieveOfEratosthenes(int n)
         return;
 }
 
+/*
+ * ineffiecent because we need to call the method square root 
+ * of the number times
+ */
 bool isPrime(int n) 
 {
         if (n<=1) return false;
