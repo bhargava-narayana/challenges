@@ -22,6 +22,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
 
 //marks all multiples of 'a'; >a and <=n
 void markMultiples(bool arr[], int a, int n)
@@ -67,6 +68,18 @@ void sieveOfEratosthenes(int n)
 
         return;
 }
+
+bool isPrime(int n) 
+{
+        if (n<=1) return false;
+        if (n==2) return true;
+        if (n%2==0) return false;
+        double m=sqrt(n);
+        for (int i=3; i<=m; i+=2)
+                if (n%i==0)
+                        return false;
+        return true;        
+}
 int main(int argc, char *argv[])
 {
         if(argc != 2)
@@ -80,6 +93,8 @@ int main(int argc, char *argv[])
         fprintf(stdout, "prime numbers less then %d is : ", n);
         sieveOfEratosthenes(n);
         fprintf(stdout, "\n");
+        int x=isPrime(n);
+        fprintf(stdout, "isPrime: %s\n", x ? "true":"false"); 
 
         return EXIT_SUCCESS;
 }
